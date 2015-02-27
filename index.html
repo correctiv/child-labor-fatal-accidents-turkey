@@ -23,9 +23,14 @@
     cartodb.createVis('map', 'https://stefanwehrmeyer.cartodb.com/api/v2/viz/fa981700-bde3-11e4-84dc-0e853d047bba/viz.json').done(function(vis, layers) {
       var map = vis.map;
       map.set({
-        minZoom: 6,
+        minZoom: 5,
         maxZoom: 8
       });
+      var bounds = [[47.2703, 5.8667],[54.0585, 15.0419]];
+      var maxBounds = [[40.2703, 0.8667],[65.0585, 26.0419]];
+      var leafletMap = vis.getNativeMap();
+      leafletMap.setMaxBounds(maxBounds);
+      leafletMap.fitBounds(bounds);
   });
 
   }

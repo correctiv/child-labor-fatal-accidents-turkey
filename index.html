@@ -3,7 +3,7 @@
 <head>
   <meta charset='utf-8'>
   <title>PPP-Karte</title>
-  <link rel="stylesheet" href="//libs.cartocdn.com/cartodb.js/v3/3.12/themes/css/cartodb.css" />
+  <link rel="stylesheet" href="css/cartodb.css" />
   <style>
     html, body, #map {
       margin: 0;
@@ -15,7 +15,7 @@
 <body>
   <div id="map"></div>
 
-  <script src="//libs.cartocdn.com/cartodb.js/v3/3.12/cartodb.js"></script>
+  <script src="js/cartodb.js"></script>
   <script>
   window.onload = function() {
     cartodb.createVis('map', 'https://stefanwehrmeyer.cartodb.com/api/v2/viz/fa981700-bde3-11e4-84dc-0e853d047bba/viz.json').done(function(vis, layers) {

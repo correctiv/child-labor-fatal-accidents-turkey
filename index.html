@@ -14,17 +14,21 @@
   <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/cartodb.js"></script>
   <script>
   window.onload = function() {
-    cartodb.createVis('map', 'https://correctiv.cartodb.com/api/v2/viz/6a191200-f7c3-11e4-a79a-0e4fddd5de28/viz.json').done(function(vis, layers) {
-      var map = vis.map;
-      map.set({
-        minZoom: 5,
-        maxZoom: 8
-      });
-      var bounds = [[25.6, 35.97], [45.16, 42.19]];
-      var leafletMap = vis.getNativeMap();
-      leafletMap.fitBounds(bounds);
-      leafletMap.attributionControl.addAttribution('Visualisierung: <a target="_blank" href="https://correctiv.org">CORRECT!V</a>');
+
+    var map = new L.Map('map', {
+      minZoom: 5,
+      maxZoom: 9,
     });
+
+    map.fitBounds([[25.6, 35.97], [45.16, 42.19]]);
+
+    var tileLayer = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png');
+    var cartoLayer = cartodb.createLayer(map, 'https://correctiv.cartodb.com/api/v2/viz/6a191200-f7c3-11e4-a79a-0e4fddd5de28/viz.json');
+
+    tileLayer.addTo(map);
+    cartoLayer.addTo(map);
+    map.attributionControl.addAttribution('Visualisierung: <a target="_blank" href="https://correctiv.org">CORRECT!V</a>');
+
   };
   </script>
 </body>

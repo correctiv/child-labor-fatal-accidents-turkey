@@ -5,58 +5,34 @@ html, body, #map {
 }
 
 div.cartodb-popup h1 {
-  font-size: 16px;
-  line-height: 1.2;
   margin: 0;
   padding: 0 0 3px 0;
-}
-
-div.cartodb-popup small {
-  display: block;
-  font-size: 10px;
-  line-height: 1.2;
-  color: #bbb;
-  padding-bottom: 10px;
-}
-
-div.cartodb-popup h4 {
-  color: #bbb;
-  padding-bottom: 3px;
-}
-
-div.cartodb-popup dl {
-  margin: 0;
-  padding: 5px 0;
-  overflow: hidden;
-}
-
-div.cartodb-popup dd {
-  display: block;
-  margin: 0;
-  padding: 0 3% 5px 0;
-  float: left;
-  width: 37%;
-  font-size: 26px;
-  line-height: 1em;
-  font-weight: bold;
-  text-align: right;
-}
-
-div.cartodb-popup dt {
-  display: block;
-  margin: 0;
-  padding: 0 0 5px 0;
-  float: right;
-  width: 60%;
-  clear: both;
+  font-size: 16px;
   line-height: 1.2;
 }
 
-div.cartodb-popup .hilight {
-  color: #B10026;
+div.cartodb-popup p {
+  margin: 0;
+  padding: 8px 0;
+  line-height: 1.4;
+}
+
+div.cartodb-popup hr {
+  border: 1px solid #dadada;
 }
 
 div.cartodb-tooltip.cartodb-tooltip {
-  font-weight: bold;
   max-width: 240px;
+}
+
+div.cartodb-tooltip .cartodb-tooltip-content {
+  padding: 10px;
+}
+
+div.cartodb-tooltip h1 {
+  padding: 0 0 3px 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+  color: white;
 }

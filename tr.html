@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Child Labor in Turkey: Fatal Accidents</title>
+  <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/themes/css/cartodb.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/cartodb.js"></script>
+  <script>
+  window.onload = function() {
+    cartodb.createVis('map', 'https://correctiv.cartodb.com/api/v2/viz/cb21139c-103a-11e5-a5e4-0e4fddd5de28/viz.json').done(function(vis, layers) {
+      var map = vis.map;
+      map.set({
+        minZoom: 5,
+        maxZoom: 8
+      });
+      var bounds = [[42.105499, 44.829700], [35.809971, 25.664101]];
+      var leafletMap = vis.getNativeMap();
+      leafletMap.fitBounds(bounds);
+      leafletMap.attributionControl.addAttribution('Visualization: <a target="_blank" href="https://correctiv.org">CORRECT!V</a>');
+    });
+  };
+  </script>
+</body>
+</html>
